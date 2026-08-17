@@ -11,10 +11,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.android.mycoffeeapp.R
+import com.android.mycoffeeapp.ui.theme.LightBrown
 
 @Preview(showBackground = true)
 @Composable
@@ -45,14 +47,14 @@ fun MyBottomNavBar() {
                 },
                 label = { Text(item.title) },
                 onClick = {},
-                selected = index == 0,
+                selected = true,
                 alwaysShowLabel = true,
                 colors = NavigationBarItemDefaults.colors(
-                    selectedIconColor = MaterialTheme.colorScheme.primary,
-                    selectedTextColor = MaterialTheme.colorScheme.primary,
-                    unselectedIconColor = MaterialTheme.colorScheme.onSurfaceVariant,
-                    unselectedTextColor = MaterialTheme.colorScheme.onSurfaceVariant,
-                    indicatorColor = MaterialTheme.colorScheme.secondaryContainer
+                    selectedIconColor = LightBrown,
+                    selectedTextColor = LightBrown,
+                    unselectedIconColor = Color.DarkGray,
+                    unselectedTextColor = Color.DarkGray,
+                    indicatorColor = LightBrown.copy(alpha = 0.02f)
                 )
             )
         }
