@@ -2,6 +2,7 @@ package com.android.mycoffeeapp.screen.homescreen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -31,6 +32,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.android.mycoffeeapp.R
+import com.android.mycoffeeapp.model.Product
 import com.android.mycoffeeapp.screen.ui_components.MyBottomNavBar
 
 @Preview(showBackground = true, showSystemUi = true)
@@ -72,7 +74,8 @@ fun HomeScreen() {
             Spacer(modifier = Modifier.height(4.dp))
 
             Row(
-                verticalAlignment = Alignment.CenterVertically
+                verticalAlignment = Alignment.CenterVertically,
+
             ) {
                 Text(
                     text = location,
@@ -93,13 +96,30 @@ fun HomeScreen() {
             Image(
                 painter = painterResource(R.drawable.modern),
                 contentDescription = "Home Banner",
-//                modifier = Modifier
-//                    .fillMaxWidth()
+
+                modifier = Modifier
+                    .fillMaxWidth()
 //                    .height(145.dp)
 //                    .clip(RoundedCornerShape(15.dp))
 //                    .graphicsLayer(scaleX = 1.35f, scaleY = 1.35f),
 //                contentScale = ContentScale.Crop
             )
+
+            Spacer(modifier = Modifier.height(15.dp))
+
+            HomeScreenCategories()
+
+            //displaying product
+            val products = listOf(
+                Product(id = 1, name = "Macchiato", description = "hello", price = 149.50, imageRes = R.drawable.icoffee),
+                Product(id = 2, name = "Latte", description = "Latte", price = 149.50, imageRes = R.drawable.icoffes),
+                Product(id = 3, name = "American", description = "American", price = 149.50, imageRes = R.drawable.icoffee),
+                Product(id = 4, name = "Snacks", description = "Desserts", price = 149.50, imageRes = R.drawable.icoffee),
+                Product(id = 5, name = "Desserts", description = "Desserts", price = 149.50, imageRes = R.drawable.icoffee),
+                Product(id = 6, name = "Coffee", description = "Coffe", price = 149.50, imageRes = R.drawable.icoffee),
+                Product(id = 7, name = "Tea", description = "Tea", price = 149.50, imageRes = R.drawable.icoffee)
+            )
+
         }
 
     }
