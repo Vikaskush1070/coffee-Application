@@ -119,6 +119,8 @@ fun HomeScreen() {
                 Product(id = 6, name = "Coffee", description = "Coffe", price = 149.50, imageRes = R.drawable.icoffee),
                 Product(id = 7, name = "Tea", description = "Tea", price = 149.50, imageRes = R.drawable.icoffee)
             )
+            ProductGrid(products = products)
+
 
         }
 
