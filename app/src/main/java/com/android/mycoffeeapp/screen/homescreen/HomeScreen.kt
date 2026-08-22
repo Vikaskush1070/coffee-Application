@@ -99,6 +99,7 @@ fun HomeScreen() {
 
                 modifier = Modifier
                     .fillMaxWidth()
+                    .clip(RoundedCornerShape(10.dp))
 //                    .height(145.dp)
 //                    .clip(RoundedCornerShape(15.dp))
 //                    .graphicsLayer(scaleX = 1.35f, scaleY = 1.35f),
@@ -118,6 +119,7 @@ fun HomeScreen() {
                 Product(id = 5, name = "Desserts", description = "Desserts", price = 149.50, imageRes = R.drawable.icoffee),
                 Product(id = 6, name = "Coffee", description = "Coffe", price = 149.50, imageRes = R.drawable.icoffee),
                 Product(id = 7, name = "Tea", description = "Tea", price = 149.50, imageRes = R.drawable.icoffee)
+
             )
             ProductGrid(products = products)
 
